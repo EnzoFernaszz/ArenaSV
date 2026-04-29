@@ -1,9 +1,10 @@
 extends Node2D
 
 
+
 func spawn_mob():
 	%PathFollow2D.progress_ratio = randf()
-	var new_mob = preload("res://mob.tscn").instantiate()
+	var new_mob = preload("res://Scenes/mob.tscn").instantiate()
 	new_mob.global_position = %PathFollow2D.global_position
 	add_child(new_mob)
 
@@ -15,3 +16,8 @@ func _on_timer_timeout():
 func _on_player_health_depleted():
 	%GameOver.show()
 	get_tree().paused = true
+
+
+func _on_chest_chest_touched() -> void:
+	%ChestTouched.visible = true
+	%ChestTouched.get_node("Control").show_screen()

@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://dun1cpardk2xw"]
+
+[ext_resource type="Script" uid="uid://dsgxioo8wstff" path="res://Scenes/game.gd" id="1_qclsr"]
+[ext_resource type="PackedScene" uid="uid://dsw8raqgacxsc" path="res://Scenes/player.tscn" id="2_a7q7f"]
+[ext_resource type="PackedScene" uid="uid://c2qg1nuvfnd4q" path="res://trees/pine_tree.tscn" id="3_6h7ij"]
+[ext_resource type="Script" uid="uid://cn6u4ilrnd7yk" path="res://Scenes/control.gd" id="3_eua6o"]
+[ext_resource type="PackedScene" uid="uid://drijwrk5p8qm0" path="res://Scenes/chest.tscn" id="3_fk7m3"]
+
+[sub_resource type="Curve2D" id="Curve2D_cp6e5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1055, -697, 0, 0, 0, 0, 1057, -697, 0, 0, 0, 0, 1057, 671, 0, 0, 0, 0, -1055, 663, 0, 0, 0, 0, -1055, -689)
+}
+point_count = 5
+
+[node name="Game" type="Node2D" unique_id=327747119]
+y_sort_enabled = true
+script = ExtResource("1_qclsr")
+
+[node name="Timer" type="Timer" parent="." unique_id=173639759]
+wait_time = 0.3
+autostart = true
+
+[node name="Player" parent="." unique_id=1174028023 instance=ExtResource("2_a7q7f")]
+
+[node name="Path2D" type="Path2D" parent="Player" unique_id=1949369106]
+curve = SubResource("Curve2D_cp6e5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=949713007]
+unique_name_in_owner = true
+position = Vector2(-1055, -697)
+
+[node name="GameOver" type="CanvasLayer" parent="." unique_id=880031702]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver" unique_id=1711581986]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.439216)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect" unique_id=970741770]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -358.0
+offset_top = -107.0
+offset_right = 358.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 124
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChestTouched" type="CanvasLayer" parent="." unique_id=88419565]
+unique_name_in_owner = true
+process_mode = 3
+layer = 10
+
+[node name="Control" type="Control" parent="ChestTouched" unique_id=1362487742]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_eua6o")
+
+[node name="ColorRect" type="ColorRect" parent="ChestTouched/Control" unique_id=723179786]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.76862746)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChestTouched/Control" unique_id=1995565992]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -734.5
+offset_top = -183.0
+offset_right = 734.5
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="ChestTouched/Control/VBoxContainer" unique_id=1217521120]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "POD Collected"
+
+[node name="HBoxContainer (cards)" type="HBoxContainer" parent="ChestTouched/Control/VBoxContainer" unique_id=1706578002]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="Card0" type="Button" parent="ChestTouched/Control/VBoxContainer/HBoxContainer (cards)" unique_id=1919586812]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+
+[node name="Card1" type="Button" parent="ChestTouched/Control/VBoxContainer/HBoxContainer (cards)" unique_id=872200152]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+
+[node name="Card2" type="Button" parent="ChestTouched/Control/VBoxContainer/HBoxContainer (cards)" unique_id=1897268752]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+
+[node name="QuestionArea" type="VBoxContainer" parent="ChestTouched/Control/VBoxContainer" unique_id=630085077]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SequenceLabel" type="Label" parent="ChestTouched/Control/VBoxContainer/QuestionArea" unique_id=1131666868]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="ChestTouched/Control/VBoxContainer/QuestionArea" unique_id=1703181350]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer (answers)" type="HBoxContainer" parent="ChestTouched/Control/VBoxContainer/QuestionArea" unique_id=498580276]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Answer0" type="Button" parent="ChestTouched/Control/VBoxContainer/QuestionArea/HBoxContainer (answers)" unique_id=816673070]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+
+[node name="Answer1" type="Button" parent="ChestTouched/Control/VBoxContainer/QuestionArea/HBoxContainer (answers)" unique_id=506553295]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+
+[node name="Answer2" type="Button" parent="ChestTouched/Control/VBoxContainer/QuestionArea/HBoxContainer (answers)" unique_id=1016770168]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1066809076]
+layer = -32
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=980385255]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Chest" parent="." unique_id=821155243 instance=ExtResource("3_fk7m3")]
+position = Vector2(535, 433)
+
+[node name="PineTree" parent="." unique_id=1536469701 instance=ExtResource("3_6h7ij")]
+position = Vector2(66, 591)
+
+[node name="PineTree2" parent="." unique_id=896816878 instance=ExtResource("3_6h7ij")]
+position = Vector2(155, 643)
+
+[node name="PineTree3" parent="." unique_id=466383871 instance=ExtResource("3_6h7ij")]
+position = Vector2(-9.99997, 687)
+
+[node name="PineTree4" parent="." unique_id=50880364 instance=ExtResource("3_6h7ij")]
+position = Vector2(682, 254)
+
+[node name="PineTree5" parent="." unique_id=1152293371 instance=ExtResource("3_6h7ij")]
+position = Vector2(829, 384)
+
+[node name="PineTree11" parent="." unique_id=1342470195 instance=ExtResource("3_6h7ij")]
+position = Vector2(781, -296)
+
+[node name="PineTree6" parent="." unique_id=658083171 instance=ExtResource("3_6h7ij")]
+position = Vector2(-677, 313)
+
+[node name="PineTree7" parent="." unique_id=767266513 instance=ExtResource("3_6h7ij")]
+position = Vector2(-788, 370)
+
+[node name="PineTree8" parent="." unique_id=1473712656 instance=ExtResource("3_6h7ij")]
+position = Vector2(-829, 229)
+
+[node name="PineTree9" parent="." unique_id=2039282013 instance=ExtResource("3_6h7ij")]
+position = Vector2(-346, -355)
+
+[node name="PineTree10" parent="." unique_id=1043826134 instance=ExtResource("3_6h7ij")]
+position = Vector2(-573, -231)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="chest_touched" from="Chest" to="." method="_on_chest_chest_touched"]

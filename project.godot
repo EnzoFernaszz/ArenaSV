@@ -75,7 +75,7 @@ Settings/Show_Tooltips=true
 [application]
 
 config/name="Your First 2D Game With Godot 4 (GDQuest)"
-run/main_scene="res://survivors_game.tscn"
+run/main_scene="res://Scenes/survivors_game.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.png"
 
@@ -92,6 +92,10 @@ project/assembly_name="Getting started with Godot 4"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/colorpicker_presets/plugin.cfg")
+
+[global_group]
+
+player=""
 
 [input]
 

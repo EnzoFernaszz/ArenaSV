@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://drijwrk5p8qm0"]
+
+[ext_resource type="Script" uid="uid://c4qdohi3u4qyh" path="res://Scenes/chest.gd" id="1_cjfl1"]
+[ext_resource type="Texture2D" uid="uid://e4q8me6nhunp" path="res://Sprites/ChestPod/pod_closed.png" id="1_lyb87"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjfl1"]
+size = Vector2(186, 146)
+
+[node name="Chest" type="Area2D" unique_id=821155243]
+script = ExtResource("1_cjfl1")
+
+[node name="PodClosed" type="Sprite2D" parent="." unique_id=989690333]
+position = Vector2(6, -7)
+texture = ExtResource("1_lyb87")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1841741139]
+shape = SubResource("RectangleShape2D_cjfl1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

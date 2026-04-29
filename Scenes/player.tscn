@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dsw8raqgacxsc"]
 
-[ext_resource type="Script" uid="uid://bjpua3hfywlnl" path="res://player.gd" id="1_73bic"]
+[ext_resource type="Script" uid="uid://bjpua3hfywlnl" path="res://Scenes/player.gd" id="1_73bic"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_bl5ih"]
-[ext_resource type="PackedScene" uid="uid://cphcr81upg72i" path="res://gun.tscn" id="3_bt0kc"]
+[ext_resource type="PackedScene" uid="uid://cphcr81upg72i" path="res://Scenes/gun.tscn" id="3_bt0kc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csncd"]
 size = Vector2(66, 38)
@@ -13,8 +13,12 @@ size = Vector2(84, 54)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5sny"]
 bg_color = Color(0.623529, 0.866667, 0.317647, 1)
 
-[node name="Player" type="CharacterBody2D" unique_id=1546396198]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6t5aa"]
+bg_color = Color(5.5167266e-06, 0.71591944, 0.88397527, 1)
+
+[node name="Player" type="CharacterBody2D" unique_id=1546396198 groups=["player"]]
 motion_mode = 1
+platform_floor_layers = 4294901760
 script = ExtResource("1_73bic")
 
 [node name="HappyBoo" parent="." unique_id=984748070 instance=ExtResource("2_bl5ih")]
@@ -24,6 +28,7 @@ unique_name_in_owner = true
 shape = SubResource("RectangleShape2D_csncd")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=473099899]
+zoom = Vector2(0.5, 0.5)
 
 [node name="Gun" parent="." unique_id=1561364329 instance=ExtResource("3_bt0kc")]
 position = Vector2(0, -40)
@@ -46,4 +51,14 @@ offset_right = 87.0
 offset_bottom = -150.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_a5sny")
 value = 100.0
+show_percentage = false
+
+[node name="ShieldBar" type="ProgressBar" parent="." unique_id=1460900356]
+unique_name_in_owner = true
+z_index = 100
+offset_left = -83.0
+offset_top = -146.0
+offset_right = 87.0
+offset_bottom = -125.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_6t5aa")
 show_percentage = false
