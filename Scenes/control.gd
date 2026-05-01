@@ -13,6 +13,8 @@ const UPGRADES = [
 	{"name": "Fire Damage", "desc": "+25% damage", "type": "damage"},
 	{"name": "Shoot Speed", "desc": "+30% fire rate", "type": "speed"},
 	{"name": "Energy Shield", "desc": "+40 HP", "type": "shield"},
+	{"name": "Shotgun", "desc": "3-bullet spread shot", "type": "shotgun"},
+	{"name": "Sniper", "desc": "Piercing shoot", "type": "sniper"}
 ]
 
 const QUESTIONS = [
@@ -41,8 +43,24 @@ func show_screen():
 	visible = true
 	get_tree().paused = true
 	question_area.visible = false
+	var player = get_tree().get_first_node_in_group("player")
 	
 	var upgrades = UPGRADES.duplicate()
+	
+	if player.get_node("Gun").gun_type == "shotgun":
+		upgrades = [
+		{"name": "Fire Damage", "desc": "+25% damage", "type": "damage"},
+		{"name": "Shoot Speed", "desc": "+30% fire rate", "type": "speed"},
+		{"name": "Energy Shield", "desc": "+40 HP", "type": "shield"},
+		{"name": "Sniper", "desc": "Piercing shoot", "type": "sniper"}
+		]
+	elif player.get_node("Gun").gun_type == "sniper":
+		upgrades = [
+		{"name": "Fire Damage", "desc": "+25% damage", "type": "damage"},
+		{"name": "Shoot Speed", "desc": "+30% fire rate", "type": "speed"},
+		{"name": "Energy Shield", "desc": "+40 HP", "type": "shield"},
+		{"name": "Shotgun", "desc": "3-bullet spread shot", "type": "shotgun"},
+		]
 	upgrades.shuffle()
 	
 	card0.text = upgrades[0]["name"]
@@ -96,7 +114,9 @@ func _apply_upgrade():
 		"damage": player.damage_multiplier += 0.25
 		"speed":  player.get_node("Gun/Timer").wait_time *= 0.7
 		"shield":
-			player.shield = min(player.shield + 40.0, player.max_shield)
+			player.shield += 25
+		"shotgun": player.get_node("Gun").gun_type = "shotgun"
+		"sniper": player.get_node("Gun").gun_type = "sniper"
 
 func _spawn_punishment():
 	pass

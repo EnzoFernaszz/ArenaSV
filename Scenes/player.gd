@@ -9,6 +9,7 @@ var shield = 0.0
 var max_shield = 50.0
 
 
+
 func _physics_process(delta):
 	const SPEED = 600.0
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
