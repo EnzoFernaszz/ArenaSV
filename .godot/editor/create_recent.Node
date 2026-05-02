@@ -1,10 +1,10 @@
+Label
+CanvasLayer
 ProgressBar
 Button
 HBoxContainer
-Label
 VBoxContainer
 Control
 ColorRect
-CanvasLayer
 CollisionShape2D
 Area2D

@@ -115,8 +115,12 @@ func _apply_upgrade():
 		"speed":  player.get_node("Gun/Timer").wait_time *= 0.7
 		"shield":
 			player.shield += 25
-		"shotgun": player.get_node("Gun").gun_type = "shotgun"
-		"sniper": player.get_node("Gun").gun_type = "sniper"
+		"shotgun":
+			var gun = player.get_node("Gun")
+			gun.set_gun_type("shotgun")
+		"sniper":
+			var gun = player.get_node("Gun")
+			gun.set_gun_type("sniper")
 
 func _spawn_punishment():
 	pass

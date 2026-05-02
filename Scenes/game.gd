@@ -1,6 +1,9 @@
 extends Node2D
 
+var score = 0
 
+func _process(_delta):
+	%ScoreLabel.text = "Score: " + str(score)
 
 func spawn_mob():
 	%PathFollow2D.progress_ratio = randf()

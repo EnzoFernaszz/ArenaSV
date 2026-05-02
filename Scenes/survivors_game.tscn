@@ -8,7 +8,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_cp6e5"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1055, -697, 0, 0, 0, 0, 1057, -697, 0, 0, 0, 0, 1057, 671, 0, 0, 0, 0, -1055, 663, 0, 0, 0, 0, -1055, -689)
+"points": PackedVector2Array(0, 0, 0, 0, -1447, -914, 0, 0, 0, 0, 1665, -918, 0, 0, 0, 0, 1656, 920, 0, 0, 0, 0, -1456, 928, 0, 0, 0, 0, -1439, -893)
 }
 point_count = 5
 
@@ -27,7 +27,8 @@ curve = SubResource("Curve2D_cp6e5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=949713007]
 unique_name_in_owner = true
-position = Vector2(-1055, -697)
+position = Vector2(-1447, -914)
+rotation = -0.0012853463
 
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=880031702]
 unique_name_in_owner = true
@@ -159,6 +160,15 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1747972779]
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=2066714807]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1066809076]
 layer = -32

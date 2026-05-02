@@ -2,6 +2,10 @@ extends Area2D
 
 var gun_type = "pistol"
 
+const PISTOL_TEX = preload("res://pistol/pistol.png")
+const SHOTGUN_TEX = preload("res://pistol/shotgun.png")
+const SNIPER_TEX = preload("res://pistol/Sniper.png")
+
 func _process(_delta):
 	var enemies_in_range = get_overlapping_bodies()
 	if enemies_in_range.size() > 0:
@@ -14,6 +18,14 @@ func shoot():
 		"pistol":  _shoot_pistol()
 		"shotgun": _shoot_shotgun()
 		"sniper":  _shoot_sniper()
+		
+
+func set_gun_type(type: String):
+	gun_type = type
+	match type:
+		"pistol":  $WeaponPivot/Pistol.texture = PISTOL_TEX
+		"shotgun": $WeaponPivot/Pistol.texture = SHOTGUN_TEX
+		"sniper":  $WeaponPivot/Pistol.texture = SNIPER_TEX
 
 func _shoot_pistol():
 	_spawn_bullet(0.0,false)

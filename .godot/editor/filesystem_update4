@@ -1,9 +1,6 @@
-res://Scenes/control.gd
-res://Scenes/mob.tscn
+res://Scenes/survivors_game.tscn
 res://Scenes/gun.tscn
-res://Scenes/bullet_2d.gd
+res://Scenes/game.gd
+res://Scenes/mob.gd
 res://Scenes/gun.gd
-res://Scenes/player.tscn
-res://Scenes/player.gd
-res://Scenes/bullet_2d.tscn
-res://characters/slime/slime.tscn
+res://Scenes/control.gd
