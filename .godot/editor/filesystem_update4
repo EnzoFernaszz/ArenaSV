@@ -1,6 +1,3 @@
-res://Scenes/survivors_game.tscn
-res://Scenes/gun.tscn
-res://Scenes/game.gd
-res://Scenes/mob.gd
-res://Scenes/gun.gd
-res://Scenes/control.gd
+res://TilteScreen.tscn
+res://Scenes/TilteScreen.tscn
+res://Scenes/tilte_screen.gd

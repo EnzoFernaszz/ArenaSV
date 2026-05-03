@@ -1,10 +1,10 @@
+Button
+VBoxContainer
 Label
+ColorRect
+Control
 CanvasLayer
 ProgressBar
-Button
 HBoxContainer
-VBoxContainer
-Control
-ColorRect
 CollisionShape2D
 Area2D

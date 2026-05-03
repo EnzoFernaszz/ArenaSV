@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bll36ploct3y8"]
+
+[ext_resource type="Script" uid="uid://uxcypkm13v7s" path="res://Scenes/tilte_screen.gd" id="1_i485x"]
+[ext_resource type="Texture2D" uid="uid://bu4jhtx4uquo7" path="res://icon.png" id="1_l70do"]
+[ext_resource type="Texture2D" uid="uid://caqfk2xng5v5u" path="res://trees/pine_tree.png" id="2_kt7mc"]
+
+[node name="Control" type="Control" unique_id=863903495]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -1.0
+offset_right = 40.0
+offset_bottom = 39.0
+script = ExtResource("1_i485x")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=386738791]
+layout_mode = 0
+offset_left = -38.0
+offset_top = -17.0
+offset_right = 1962.0
+offset_bottom = 1083.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=944940353]
+layout_mode = 0
+offset_left = 653.0
+offset_top = 207.0
+offset_right = 1262.0
+offset_bottom = 907.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1570625631]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_font_sizes/font_size = 150
+text = "ArenaSV"
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1586044286]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "Start"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=682694427]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1152761998]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Exit"
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=944313547]
+position = Vector2(457, 589.00006)
+scale = Vector2(3, 3)
+texture = ExtResource("1_l70do")
+
+[node name="PineTree" type="Sprite2D" parent="." unique_id=1114451142]
+position = Vector2(1405, 314)
+texture = ExtResource("2_kt7mc")
+
+[node name="PineTree2" type="Sprite2D" parent="." unique_id=457371669]
+position = Vector2(1706, 496)
+texture = ExtResource("2_kt7mc")
+
+[node name="PineTree3" type="Sprite2D" parent="." unique_id=1795960288]
+position = Vector2(1386, 784)
+texture = ExtResource("2_kt7mc")
+
+[node name="PineTree4" type="Sprite2D" parent="." unique_id=522699348]
+position = Vector2(265, 292)
+texture = ExtResource("2_kt7mc")
+
+[node name="PineTree5" type="Sprite2D" parent="." unique_id=556356785]
+position = Vector2(710, 930)
+texture = ExtResource("2_kt7mc")
