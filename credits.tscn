@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://b52qecyiolqg8"]
+
+[ext_resource type="Texture2D" uid="uid://caqfk2xng5v5u" path="res://trees/pine_tree.png" id="1_nm7lk"]
+
+[node name="Control" type="Control" unique_id=2116331838]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1317435936]
+layout_mode = 0
+offset_left = -38.0
+offset_top = -17.0
+offset_right = 1962.0
+offset_bottom = 1083.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=498697288]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 169.0
+offset_top = -540.0
+offset_right = 1581.0
+offset_bottom = 980.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1504102475]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_font_sizes/font_size = 150
+text = "Alunos:
+Enzo Fernandes
+Guilherme Azevedo
+Rodrigo Temporal
+Hafiz Oliveira
+Samuel Lopes
+"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1532977439]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+toggle_mode = true
+text = "Return"
+
+[node name="PineTree" type="Sprite2D" parent="." unique_id=19990508]
+position = Vector2(1405, 314)
+texture = ExtResource("1_nm7lk")
+
+[node name="PineTree2" type="Sprite2D" parent="." unique_id=479983707]
+position = Vector2(1706, 496)
+texture = ExtResource("1_nm7lk")
+
+[node name="PineTree3" type="Sprite2D" parent="." unique_id=293536540]
+position = Vector2(1386, 784)
+texture = ExtResource("1_nm7lk")
+
+[node name="PineTree4" type="Sprite2D" parent="." unique_id=1916239403]
+position = Vector2(265, 292)
+texture = ExtResource("1_nm7lk")
+
+[node name="PineTree5" type="Sprite2D" parent="." unique_id=994922902]
+position = Vector2(710, 930)
+texture = ExtResource("1_nm7lk")

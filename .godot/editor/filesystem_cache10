@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1777777266
+::res://::1778188664
 default_bus_layout.tres::AudioBusLayout::6564268947468103023::1777769433::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D::3850624499632875500::1777769433::1777772148::1::::<><><>0<>0<>08328dee63a8ba762d4beb129ea8dc66<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 ::res://addons/::1777769433
@@ -39,7 +39,7 @@ impact.tscn::PackedScene::706737085132625066::1777769433::0::1::::<><><>0<>0<><>
 muzzle_flash.gd::GDScript::4479662457787026327::1777769433::0::1::::<>Node2D<><>0<>0<><>::
 muzzle_flash.png::CompressedTexture2D::3592944556550980239::1777769433::1777772148::1::::<><><>0<>0<>d995f352a7d07e7705e830566b0eb185<>res://.godot/imported/muzzle_flash.png-752b19c1a1a60c24eac6f205d487f2ea.ctex::
 muzzle_flash.tscn::PackedScene::392939055719894999::1777769433::0::1::::<><><>0<>0<><>::uid://b428neo6pc13x::::res://pistol/muzzle_flash/muzzle_flash.gd<>uid://brgpjilf7s2ul::::res://pistol/muzzle_flash/muzzle_flash.png
-::res://Scenes/::1777769433
+::res://Scenes/::1777778085
 bullet_2d.gd::GDScript::5756550784046680375::1777769433::0::1::::<>Area2D<><>0<>0<><>::
 bullet_2d.tscn::PackedScene::3645470024051463521::1777769433::0::1::::<><><>0<>0<><>::uid://coarsyh1eafkp::::res://Scenes/bullet_2d.gd<>uid://dftkbqwsfd68r::::res://pistol/projectile.png
 chest.gd::GDScript::6841555410369029663::1777769433::0::1::::<>Area2D<><>0<>0<><>::
@@ -52,8 +52,9 @@ mob.gd::GDScript::1001648200538875950::1777769433::0::1::::<>CharacterBody2D<><>
 mob.tscn::PackedScene::9081061977632875729::1777769433::0::1::::<><><>0<>0<><>::uid://ojg88pe48jk5::::res://Scenes/mob.gd<>uid://ogik4s70pgwl::::res://characters/slime/slime.tscn
 player.gd::GDScript::3050301764329180417::1777769433::0::1::::<>CharacterBody2D<><>0<>0<><>::
 player.tscn::PackedScene::8470111591400466706::1777769433::0::1::::<><><>0<>0<><>::uid://bjpua3hfywlnl::::res://Scenes/player.gd<>uid://pbmyh1qru7p::::res://characters/happy_boo/happy_boo.tscn<>uid://cphcr81upg72i::::res://Scenes/gun.tscn
-TilteScreen.tscn::PackedScene::3182962359897276921::1777777266::0::1::::<><><>0<>0<><>::
 survivors_game.tscn::PackedScene::8591458836669554224::1777769433::0::1::::<><><>0<>0<><>::uid://dsgxioo8wstff::::res://Scenes/game.gd<>uid://dsw8raqgacxsc::::res://Scenes/player.tscn<>uid://c2qg1nuvfnd4q::::res://trees/pine_tree.tscn<>uid://cn6u4ilrnd7yk::::res://Scenes/control.gd<>uid://drijwrk5p8qm0::::res://Scenes/chest.tscn
+TilteScreen.tscn::PackedScene::3182962359897276921::1777778085::0::1::::<><><>0<>0<><>::uid://uxcypkm13v7s::::res://Scenes/tilte_screen.gd<>uid://bu4jhtx4uquo7::::res://icon.png<>uid://caqfk2xng5v5u::::res://trees/pine_tree.png
+tilte_screen.gd::GDScript::1451422658022664998::1777778063::0::1::::<>Control<><>0<>0<><>::
 ::res://smoke_explosion/::1777772148
 circle_32.png::CompressedTexture2D::6271663262871881894::1777769433::1777772148::1::::<><><>0<>0<>db735c381a80b327847292fad91de94a<>res://.godot/imported/circle_32.png-ff53eadac5c62484a55afe7e47d5145f.ctex::
 smoke_explosion.gd::GDScript::3631000237238128379::1777769433::0::1::::<>Node2D<><>0<>0<><>::

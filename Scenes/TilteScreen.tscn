@@ -20,11 +20,17 @@ offset_right = 1962.0
 offset_bottom = 1083.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=944940353]
-layout_mode = 0
-offset_left = 653.0
-offset_top = 207.0
-offset_right = 1262.0
-offset_bottom = 907.0
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 650.0
+offset_top = 300.0
+offset_right = 1219.0
+offset_bottom = 666.0
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1570625631]
@@ -42,11 +48,15 @@ text = "Start"
 [node name="Settings" type="Button" parent="VBoxContainer" unique_id=682694427]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
+toggle_mode = true
+button_pressed = true
 text = "Settings"
 
 [node name="Exit" type="Button" parent="VBoxContainer" unique_id=1152761998]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
+toggle_mode = true
+button_pressed = true
 text = "Exit"
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=944313547]
