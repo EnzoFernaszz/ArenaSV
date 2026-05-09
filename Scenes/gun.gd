@@ -37,16 +37,17 @@ func _shoot_shotgun():
 	_spawn_bullet(-0.3,false)
 
 func _shoot_sniper():
-	_spawn_bullet(0.0,true)
-	
+	var bullet = _spawn_bullet(0.0, true)
+	bullet.damage_multiplier = 3.0
 
-func _spawn_bullet(angle_offset: float, is_piercing: bool):
+func _spawn_bullet(angle_offset: float, is_piercing: bool) -> Area2D:
 	const BULLET = preload("res://Scenes/bullet_2d.tscn")
 	var new_bullet = BULLET.instantiate()
 	new_bullet.global_transform = %ShootingPoint.global_transform
 	new_bullet.rotation += angle_offset
 	new_bullet.piercing = is_piercing
 	%ShootingPoint.add_child(new_bullet)
+	return new_bullet
 
 func _on_timer_timeout() -> void:
 	shoot()

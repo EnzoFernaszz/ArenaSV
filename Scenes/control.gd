@@ -28,6 +28,7 @@ const QUESTIONS = [
 var selected_upgrade = null
 var current_question = null
 var timer_tween = null
+var current_chest = null
 
 @onready var card0 = %Card0
 @onready var card1 = %Card1
@@ -39,7 +40,8 @@ var timer_tween = null
 @onready var ans1 = %Answer1
 @onready var ans2 = %Answer2
 
-func show_screen():
+func show_screen(chest = null):
+	current_chest = chest
 	visible = true
 	get_tree().paused = true
 	question_area.visible = false
@@ -126,5 +128,9 @@ func _spawn_punishment():
 	pass
 
 func _close():
+	if current_chest != null:
+		current_chest.queue_free()
+		current_chest = null
+	get_node("/root/Game").active_chest = null
 	visible = false
 	get_tree().paused = false

@@ -3,8 +3,9 @@ extends CharacterBody2D
 signal died
 
 
-var speed = randf_range(200, 300)
-var health = 3
+var speed = randf_range(450, 600)
+var health = 2.0
+var score_value = 2
 
 @onready var player = get_node("/root/Game/Player")
 

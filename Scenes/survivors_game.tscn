@@ -16,7 +16,12 @@ point_count = 5
 y_sort_enabled = true
 script = ExtResource("1_qclsr")
 
+[node name="ChestTimer" type="Timer" parent="." unique_id=1743800169]
+wait_time = 15.0
+autostart = true
+
 [node name="Timer" type="Timer" parent="." unique_id=173639759]
+unique_name_in_owner = true
 wait_time = 0.3
 autostart = true
 
@@ -179,6 +184,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.16470589, 0.16470589, 0.22745098, 1)
 
 [node name="Chest" parent="." unique_id=821155243 instance=ExtResource("3_fk7m3")]
 position = Vector2(535, 433)
@@ -216,6 +222,7 @@ position = Vector2(-346, -355)
 [node name="PineTree10" parent="." unique_id=1043826134 instance=ExtResource("3_6h7ij")]
 position = Vector2(-573, -231)
 
+[connection signal="timeout" from="ChestTimer" to="." method="_on_chest_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="chest_touched" from="Chest" to="." method="_on_chest_chest_touched"]

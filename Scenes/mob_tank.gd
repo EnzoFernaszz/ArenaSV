@@ -3,15 +3,17 @@ extends CharacterBody2D
 signal died
 
 
-var speed = randf_range(200, 300)
-var health = 3
+var speed = randf_range(80, 120)
+var health = 12.0
+var score_value = 5
 
 @onready var player = get_node("/root/Game/Player")
 
 
 func _ready():
 	var game_score = get_node("/root/Game").score
-	health *= 1.0 + (game_score / 100.0) * 0.5
+	health *= 1.0 + (game_score / 50.0) * 0.8
+	speed *= 1.0 + (game_score / 150.0)
 	%Slime.play_walk()
 
 

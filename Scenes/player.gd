@@ -20,7 +20,7 @@ func _physics_process(delta):
 	else:
 		%HappyBoo.play_idle_animation()
 	# Taking damage — shield absorbs first
-	const DAMAGE_RATE = 6.0
+	const DAMAGE_RATE = 20.0
 	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
 	if overlapping_mobs:
 		var damage = DAMAGE_RATE * overlapping_mobs.size() * delta

@@ -13,7 +13,7 @@ position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_im3ph")
 
 [node name="GroundShadow" type="Sprite2D" parent="." unique_id=63197420]
-modulate = Color(0.898039, 0.878431, 0.831373, 1)
+modulate = Color(0.11372549, 0.11372549, 0.16078432, 1)
 z_index = -1
 z_as_relative = false
 scale = Vector2(0.817308, 0.817308)

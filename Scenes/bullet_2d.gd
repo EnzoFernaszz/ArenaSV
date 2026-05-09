@@ -2,6 +2,7 @@ extends Area2D
 
 var travelled_distance = 0
 var piercing = false
+var damage_multiplier = 1.0
 
 func _physics_process(delta):
 	const SPEED = 1000
@@ -14,6 +15,6 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	if body.has_method("take_damage"):
 		var player = get_tree().get_first_node_in_group("player")
-		body.take_damage(player.damage_multiplier)
+		body.take_damage(player.damage_multiplier * damage_multiplier)
 	if not piercing:
 		queue_free()

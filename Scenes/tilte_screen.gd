@@ -9,7 +9,7 @@ func _ready():
 		buttonStart.pressed.connect(start_game)
 	
 	if buttonSettings:
-		ss
+		pass
 
 func start_game():
 	print("Loading game scene...")
