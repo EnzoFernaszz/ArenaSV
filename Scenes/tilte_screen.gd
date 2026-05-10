@@ -13,4 +13,4 @@ func _ready():
 
 func start_game():
 	print("Loading game scene...")
-	get_tree().change_scene_to_file("res://Scenes/survivors_game.tscn")
+	get_tree().change_scene_to_file("res://Scenes/story_screen.tscn")

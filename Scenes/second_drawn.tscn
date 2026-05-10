@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c7omwncifi4ek"]
+
+[ext_resource type="Texture2D" uid="uid://buqreaxxbc5b3" path="res://Sprites/Arts/SecondStartScreen.png" id="1_3qj8n"]
+[ext_resource type="Script" uid="uid://us8sj1bde1lw" path="res://Scenes/second_drawn.gd" id="1_4q4k1"]
+
+[node name="SecondDrawn" type="Control" unique_id=107302583]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_4q4k1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1068093858]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_3qj8n")
+
+[node name="Timer" type="Timer" parent="." unique_id=182530226]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

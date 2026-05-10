@@ -5,7 +5,7 @@ var active_chest = null
 const MAX_CHESTS = 1
 
 func _process(_delta):
-	%ScoreLabel.text = "Score: " + str(score)
+	%ScoreLabel.text = "SCORE: " + str(score)
 	_update_difficulty()
 
 const MOB = preload("res://Scenes/mob.tscn")

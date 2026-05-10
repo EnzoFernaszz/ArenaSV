@@ -1,9 +1,12 @@
-Timer
-Label
 Button
-VBoxContainer
-ColorRect
+PanelContainer
+Timer
+TextureRect
 Control
+Sprite2D
+ColorRect
+Label
+VBoxContainer
 CanvasLayer
 ProgressBar
 HBoxContainer

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://csarydg6k7l44"]
+
+[ext_resource type="Texture2D" uid="uid://dj2c2cecm3iak" path="res://Sprites/Arts/MainScreenArt.png" id="1_ajpfi"]
+[ext_resource type="Script" uid="uid://df5vvqwaip6ry" path="res://Scenes/story_screen.gd" id="1_b24mr"]
+
+[node name="FirstDawn" type="Control" unique_id=1024908125]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_b24mr")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1958891189]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ajpfi")
+
+[node name="Timer" type="Timer" parent="." unique_id=1508063813]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -5,12 +5,29 @@
 [ext_resource type="PackedScene" uid="uid://c2qg1nuvfnd4q" path="res://trees/pine_tree.tscn" id="3_6h7ij"]
 [ext_resource type="Script" uid="uid://cn6u4ilrnd7yk" path="res://Scenes/control.gd" id="3_eua6o"]
 [ext_resource type="PackedScene" uid="uid://drijwrk5p8qm0" path="res://Scenes/chest.tscn" id="3_fk7m3"]
+[ext_resource type="FontFile" uid="uid://davvooq4yfjuq" path="res://fonts/Russo_One/RussoOne-Regular.ttf" id="4_dfjrj"]
 
 [sub_resource type="Curve2D" id="Curve2D_cp6e5"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -1447, -914, 0, 0, 0, 0, 1665, -918, 0, 0, 0, 0, 1656, 920, 0, 0, 0, 0, -1456, 928, 0, 0, 0, 0, -1439, -893)
 }
 point_count = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfjrj"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(0.050980393, 0.050980393, 0.12156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [node name="Game" type="Node2D" unique_id=327747119]
 y_sort_enabled = true
@@ -61,8 +78,9 @@ offset_right = 358.0
 offset_bottom = 107.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_dfjrj")
 theme_override_font_sizes/font_size = 124
-text = "Game Over"
+text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -168,12 +186,24 @@ layout_mode = 2
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1747972779]
 
-[node name="ScoreLabel" type="Label" parent="HUD" unique_id=2066714807]
+[node name="PanelContainer" type="PanelContainer" parent="HUD" unique_id=1145084779]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 69.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dfjrj")
+
+[node name="ScoreLabel" type="Label" parent="HUD/PanelContainer" unique_id=2066714807]
 unique_name_in_owner = true
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 100
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_dfjrj")
+theme_override_font_sizes/font_size = 50
+text = "aaaaaa"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1066809076]
 layer = -32

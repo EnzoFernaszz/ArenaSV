@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dhapxq8y8ow57" path="res://characters/happy_boo/square_lower_leg.png" id="4_plnsd"]
 [ext_resource type="Texture2D" uid="uid://qmqpm6asge1i" path="res://characters/happy_boo/square_upper_leg.png" id="5_q2t1e"]
 [ext_resource type="Texture2D" uid="uid://cksiu5gst6fmp" path="res://characters/happy_boo/square_body.png" id="6_w3ck4"]
-[ext_resource type="Texture2D" uid="uid://cvs0lh814pk7h" path="res://characters/happy_boo/square_face.png" id="7_h5h8s"]
+[ext_resource type="Texture2D" uid="uid://c08mgdhjfp7i0" path="res://Sprites/Arts/CharFaceSprite.png" id="7_2wjx3"]
 
 [sub_resource type="Animation" id="Animation_hed62"]
 length = 0.001
@@ -645,5 +645,4 @@ offset = Vector2(0, -23)
 
 [node name="SquareFace" type="Sprite2D" parent="Colorizer/SquareBody" unique_id=807754123]
 position = Vector2(0, -17)
-texture = ExtResource("7_h5h8s")
-metadata/_edit_lock_ = true
+texture = ExtResource("7_2wjx3")
