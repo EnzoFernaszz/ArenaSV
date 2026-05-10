@@ -4,13 +4,21 @@ var score = 0
 var active_chest = null
 const MAX_CHESTS = 1
 
-func _process(_delta):
-	%ScoreLabel.text = "SCORE: " + str(score)
-	_update_difficulty()
+# 1. ADICIONE OS LIMITES AQUI NO TOPO
+# Lembre-se de ir no Inspetor (após salvar) e mudar esses valores 
+# para as coordenadas exatas das suas paredes!
+@export var limite_esquerdo: float = -2250.0
+@export var limite_direito: float = 2250.0
+@export var limite_cima: float = -2250.0
+@export var limite_baixo: float = 2250.0
 
 const MOB = preload("res://Scenes/mob.tscn")
 const MOB_FAST = preload("res://Scenes/mob_fast.tscn")
 const MOB_TANK = preload("res://Scenes/mob_tank.tscn")
+
+func _process(_delta):
+	%ScoreLabel.text = "SCORE: " + str(score)
+	_update_difficulty()
 
 func _update_difficulty():
 	var spawn_timer = %Timer
@@ -22,22 +30,36 @@ func spawn_mob():
 	var fast_chance = min(0.4, score / 500.0)        
 	var tank_chance = min(0.3, max(0, (score - 100) / 600.0)) 
 	var roll = randf()
+	
 	if roll < tank_chance:
 		new_mob = MOB_TANK.instantiate()
 	elif roll < tank_chance + fast_chance:
 		new_mob = MOB_FAST.instantiate()
 	else:
 		new_mob = MOB.instantiate()
-	new_mob.global_position = %PathFollow2D.global_position
+	
+	# 2. APLIQUE O CLAMP NA POSIÇÃO DO MOB
+	var pos = %PathFollow2D.global_position
+	pos.x = clamp(pos.x, limite_esquerdo, limite_direito)
+	pos.y = clamp(pos.y, limite_cima, limite_baixo)
+	
+	new_mob.global_position = pos
 	add_child(new_mob)
 
 func spawn_chest():
 	if active_chest != null:
 		return
+		
 	var chest_scene = preload("res://Scenes/chest.tscn")
 	var chest = chest_scene.instantiate()
 	%PathFollow2D.progress_ratio = randf()
-	chest.global_position = %PathFollow2D.global_position
+	
+	# 3. APLIQUE O CLAMP NA POSIÇÃO DO BAÚ TAMBÉM
+	var pos = %PathFollow2D.global_position
+	pos.x = clamp(pos.x, limite_esquerdo, limite_direito)
+	pos.y = clamp(pos.y, limite_cima, limite_baixo)
+	
+	chest.global_position = pos
 	chest.chest_touched.connect(_on_chest_chest_touched)
 	add_child(chest)
 	active_chest = chest

@@ -45,12 +45,13 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 40
 text = "Start"
 
-[node name="Settings" type="Button" parent="VBoxContainer" unique_id=682694427]
+[node name="Tutorial" type="Button" parent="VBoxContainer" unique_id=682694427]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 toggle_mode = true
 button_pressed = true
-text = "Settings"
+text = "Tutorial
+"
 
 [node name="Exit" type="Button" parent="VBoxContainer" unique_id=1152761998]
 layout_mode = 2

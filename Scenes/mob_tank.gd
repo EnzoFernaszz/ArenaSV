@@ -11,7 +11,7 @@ var score_value = 5
 
 
 func _ready():
-	%Slime.modulate = Color(0.6, 0.2, 0.9)
+	%Slime.modulate = Color("9933e6ff")
 	var game_score = get_node("/root/Game").score
 	health *= 1.0 + (game_score / 50.0) * 0.8
 	speed *= 1.0 + (game_score / 150.0)
