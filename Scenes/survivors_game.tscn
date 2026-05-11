@@ -117,15 +117,25 @@ text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonRestart" type="Button" parent="GameOver" unique_id=203097685]
+[node name="ButtonTryAgain" type="Button" parent="GameOver" unique_id=1916730494]
 process_mode = 3
-offset_left = 815.0
+offset_left = 705.0
 offset_top = 648.0
-offset_right = 1067.0
+offset_right = 1215.0
 offset_bottom = 750.0
 theme_override_fonts/font = ExtResource("5_8o5cv")
 theme_override_font_sizes/font_size = 67
-text = "MENU"
+text = "TRY AGAIN"
+
+[node name="ButtonMainMenu" type="Button" parent="GameOver" unique_id=968348588]
+process_mode = 3
+offset_left = 705.0
+offset_top = 793.0
+offset_right = 1215.0
+offset_bottom = 895.0
+theme_override_fonts/font = ExtResource("5_8o5cv")
+theme_override_font_sizes/font_size = 67
+text = "MAIN MENU"
 
 [node name="ChestTouched" type="CanvasLayer" parent="." unique_id=88419565]
 unique_name_in_owner = true
@@ -258,6 +268,7 @@ text = "aaaaaa"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1066809076]
 layer = -32
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=980385255]
 anchors_preset = 15
@@ -449,5 +460,6 @@ position = Vector2(1388, -2045)
 [connection signal="timeout" from="ChestTimer" to="." method="_on_chest_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
-[connection signal="pressed" from="GameOver/ButtonRestart" to="." method="_on_button_restart_pressed"]
+[connection signal="pressed" from="GameOver/ButtonTryAgain" to="." method="_on_button_try_again_pressed"]
+[connection signal="pressed" from="GameOver/ButtonMainMenu" to="." method="_on_button_main_menu_pressed"]
 [connection signal="chest_touched" from="Chest" to="." method="_on_chest_chest_touched"]

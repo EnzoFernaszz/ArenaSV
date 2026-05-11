@@ -4,3 +4,5 @@ res://Scenes/second_drawn.tscn
 res://Scenes/story_screen.gd
 res://Scenes/second_drawn.gd
 res://Scenes/third_drawn.gd
+res://Scenes/survivors_game.tscn
+res://Scenes/game.gd
