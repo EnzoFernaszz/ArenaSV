@@ -55,6 +55,11 @@ func show_screen(chest = null):
 	visible = true
 	get_tree().paused = true
 	question_area.visible = false
+	
+	card0.disabled = false
+	card1.disabled = false
+	card2.disabled = false
+	
 	var player = get_tree().get_first_node_in_group("player")
 	
 	var upgrades = UPGRADES.duplicate()
@@ -86,6 +91,11 @@ func show_screen(chest = null):
 func _on_card_pressed(card):
 	selected_upgrade = card.get_meta("upgrade")
 	question_area.visible = true
+	
+	card0.disabled = true
+	card1.disabled = true
+	card2.disabled = true
+	
 	_load_question()
 
 func _load_question():

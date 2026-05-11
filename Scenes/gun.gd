@@ -9,8 +9,11 @@ const SNIPER_TEX = preload("res://pistol/Sniper.png")
 func _process(_delta):
 	var enemies_in_range = get_overlapping_bodies()
 	if enemies_in_range.size() > 0:
-		var target_enemy = enemies_in_range.front()
-		look_at(target_enemy.global_position)
+		var nearest = enemies_in_range[0]
+		for enemy in enemies_in_range:
+			if global_position.distance_to(enemy.global_position) < global_position.distance_to(nearest.global_position):
+				nearest = enemy
+		look_at(nearest.global_position)
 
 
 func shoot():
