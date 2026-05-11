@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bts0216g84hul"]
+
+[ext_resource type="AudioStream" uid="uid://q4hngc8oujle" path="res://somLORE.mp3" id="1_0k47o"]
+[ext_resource type="Script" uid="uid://bvxwh6g5ufqmi" path="res://Scenes/gerenciador_audio.gd" id="1_a35rk"]
+
+[node name="GerenciadorAudio" type="Node" unique_id=1521093239]
+script = ExtResource("1_a35rk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=724416960]
+stream = ExtResource("1_0k47o")
+volume_db = -2.716

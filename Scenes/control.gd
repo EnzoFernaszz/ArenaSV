@@ -23,6 +23,16 @@ const QUESTIONS = [
 	{"seq": "10 — 7 — 4 — ?", "correct": 1,  "options": [1, 2, 3]},
 	{"seq": "4 — 8 — 12 — ?", "correct": 16, "options": [14, 16, 18]},
 	{"seq": "1 — 4 — 7 — ?",  "correct": 10, "options": [9, 10, 11]},
+	{"seq": "? — 6 — 9 — 12",  "correct": 3, "options": [15, 3, 1]},
+	{"seq": "Qual a razão da PA: 5 — 10 — 15 — 20?",  "correct": 5, "options": [5, 15, 25]},
+	{"seq": "20 — 40 — ? — 80",  "correct": 60, "options": [50, 60, 70]},
+	{"seq": "-2 — 0 — 2 — ?",  "correct": 4, "options": [6, 3, 4]},
+	{"seq": "Se a1 = 2 e r = 5, qual o a2?",  "correct": 7, "options": [7, 10, 3]},
+	{"seq": "100 — 90 — 80 — ?",  "correct": 70, "options": [75, 70, 60]},
+	{"seq": "5 — ? — 15 — 20",  "correct": 10, "options": [8, 12, 10]},
+	{"seq": "Qual a razão da PA: 3 — 10 — 17 — 24?",  "correct": 7, "options": [13, 7, 11]},
+	{"seq": "Qual a razão da PA: 1 — 2 — 3 — 4",  "correct": 1, "options": [1, 0, 5]},
+	{"seq": "? — 5 — 15 — 25",  "correct": -5, "options": [0, 5, -5]}
 ]
 
 var selected_upgrade = null
@@ -102,8 +112,10 @@ func _on_answer_pressed(button):
 	if timer_tween:
 		timer_tween.kill()
 	if button.get_meta("value") == current_question["correct"]:
+		$AudioCorreta.play()
 		_apply_upgrade()
 	else:
+		$AudioErrada.play()
 		_spawn_punishment()
 	_close()
 

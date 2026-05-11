@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dhmgcae10thnp" path="res://Scenes/tutorial_screen.gd" id="1_vscmb"]
 [ext_resource type="Texture2D" uid="uid://b2ent6mf1y7w7" path="res://characters/happy_boo/square_ref.png" id="1_y8jer"]
 [ext_resource type="Texture2D" uid="uid://e4q8me6nhunp" path="res://Sprites/ChestPod/pod_closed.png" id="2_elo14"]
+[ext_resource type="FontFile" uid="uid://davvooq4yfjuq" path="res://fonts/Russo_One/RussoOne-Regular.ttf" id="2_nqd15"]
+[ext_resource type="FontFile" uid="uid://dpbgb3lg16uw1" path="res://fonts/Silkscreen/Silkscreen-Bold.ttf" id="3_gf6pl"]
 [ext_resource type="Texture2D" uid="uid://dvgfmy6vtvjji" path="res://characters/slime/slime_body.png" id="3_vscmb"]
 [ext_resource type="Texture2D" uid="uid://c078jrp2yvc4s" path="res://characters/slime/slime_face.png" id="4_gf6pl"]
 
@@ -22,36 +24,39 @@ offset_bottom = 1079.0
 
 [node name="LabelTitulo" type="Label" parent="." unique_id=2095092215]
 layout_mode = 0
-offset_left = 779.0
+offset_left = 796.0
 offset_top = 38.0
-offset_right = 1043.0
-offset_bottom = 134.0
+offset_right = 1114.0
+offset_bottom = 136.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 70
+theme_override_fonts/font = ExtResource("2_nqd15")
+theme_override_font_sizes/font_size = 80
 text = "Tutorial"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1134552221]
 layout_mode = 0
-offset_left = 497.0
+offset_left = 521.0
 offset_top = 185.0
-offset_right = 625.0
+offset_right = 649.0
 offset_bottom = 313.0
 texture = ExtResource("1_y8jer")
 
 [node name="ButtonVoltar" type="Button" parent="." unique_id=1496809029]
 layout_mode = 0
-offset_left = 28.0
+offset_left = 36.0
 offset_top = 29.0
-offset_right = 211.0
-offset_bottom = 97.0
+offset_right = 208.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_gf6pl")
 theme_override_font_sizes/font_size = 29
 text = "VOLTAR"
 
 [node name="LabelMovimentação" type="Label" parent="." unique_id=1691430443]
 layout_mode = 0
-offset_left = 663.0
+offset_left = 687.0
 offset_top = 234.0
-offset_right = 1213.0
+offset_right = 1237.0
 offset_bottom = 283.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
@@ -59,17 +64,17 @@ text = "Use W A S D para se movimentar"
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1063811037]
 layout_mode = 0
-offset_left = 262.0
+offset_left = 304.0
 offset_top = 369.0
-offset_right = 390.0
+offset_right = 432.0
 offset_bottom = 497.0
 texture = ExtResource("2_elo14")
 
 [node name="LabelPowerups" type="Label" parent="." unique_id=1925957888]
 layout_mode = 0
-offset_left = 428.0
+offset_left = 462.0
 offset_top = 421.0
-offset_right = 1478.0
+offset_right = 1512.0
 offset_bottom = 470.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
@@ -77,26 +82,26 @@ text = "Recolha os baús e responda perguntas para liberar Power-Ups"
 
 [node name="TextureRect3" type="TextureRect" parent="." unique_id=1157021270]
 layout_mode = 0
-offset_left = 316.0
+offset_left = 351.0
 offset_top = 568.0
-offset_right = 424.0
+offset_right = 459.0
 offset_bottom = 658.0
 texture = ExtResource("3_vscmb")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect3" unique_id=2130461257]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 26.0
+offset_left = 27.0
 offset_top = 26.0
-offset_right = 82.0
+offset_right = 83.0
 offset_bottom = 66.0
 texture = ExtResource("4_gf6pl")
 
 [node name="LabelPowerups2" type="Label" parent="." unique_id=1556410168]
 layout_mode = 0
-offset_left = 458.0
+offset_left = 488.0
 offset_top = 587.0
-offset_right = 1470.0
+offset_right = 1500.0
 offset_bottom = 636.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
@@ -104,9 +109,9 @@ text = "Não deixe o slime encostar em você, eles podem te matar!!!"
 
 [node name="TextureRect4" type="TextureRect" parent="." unique_id=1413514125]
 layout_mode = 0
-offset_left = 469.0
+offset_left = 486.0
 offset_top = 854.0
-offset_right = 577.0
+offset_right = 594.0
 offset_bottom = 944.0
 texture = ExtResource("3_vscmb")
 
@@ -122,9 +127,9 @@ texture = ExtResource("4_gf6pl")
 [node name="TextureRect5" type="TextureRect" parent="." unique_id=731345196]
 modulate = Color(1, 0.3019608, 0.3019608, 1)
 layout_mode = 0
-offset_left = 865.0
+offset_left = 879.0
 offset_top = 854.0
-offset_right = 973.0
+offset_right = 987.0
 offset_bottom = 944.0
 texture = ExtResource("3_vscmb")
 
@@ -140,9 +145,9 @@ texture = ExtResource("4_gf6pl")
 [node name="TextureRect6" type="TextureRect" parent="." unique_id=1771547899]
 modulate = Color(0.6, 0.2, 0.9019608, 1)
 layout_mode = 0
-offset_left = 1244.0
+offset_left = 1257.0
 offset_top = 853.0
-offset_right = 1352.0
+offset_right = 1365.0
 offset_bottom = 943.0
 texture = ExtResource("3_vscmb")
 
@@ -157,9 +162,9 @@ texture = ExtResource("4_gf6pl")
 
 [node name="LabelMovimentação2" type="Label" parent="TextureRect6" unique_id=1669223867]
 layout_mode = 0
-offset_left = -528.0
+offset_left = -527.0
 offset_top = -138.0
-offset_right = -79.0
+offset_right = -78.0
 offset_bottom = -89.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
@@ -167,9 +172,9 @@ text = "Informações importantes:"
 
 [node name="LabelSlime" type="Label" parent="." unique_id=1781658485]
 layout_mode = 0
-offset_left = 401.0
+offset_left = 424.0
 offset_top = 961.0
-offset_right = 642.0
+offset_right = 665.0
 offset_bottom = 1010.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
@@ -177,9 +182,9 @@ text = "Slime Comum"
 
 [node name="LabelSlime2" type="Label" parent="." unique_id=976048882]
 layout_mode = 0
-offset_left = 804.0
+offset_left = 825.0
 offset_top = 961.0
-offset_right = 1033.0
+offset_right = 1054.0
 offset_bottom = 1010.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
@@ -187,9 +192,9 @@ text = "Slime Rápido"
 
 [node name="LabelSlime3" type="Label" parent="." unique_id=9439461]
 layout_mode = 0
-offset_left = 1188.0
+offset_left = 1203.0
 offset_top = 961.0
-offset_right = 1417.0
+offset_right = 1432.0
 offset_bottom = 1010.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35

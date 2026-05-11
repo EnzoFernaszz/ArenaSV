@@ -6,6 +6,11 @@
 [ext_resource type="Script" uid="uid://cn6u4ilrnd7yk" path="res://Scenes/control.gd" id="3_eua6o"]
 [ext_resource type="PackedScene" uid="uid://drijwrk5p8qm0" path="res://Scenes/chest.tscn" id="3_fk7m3"]
 [ext_resource type="FontFile" uid="uid://davvooq4yfjuq" path="res://fonts/Russo_One/RussoOne-Regular.ttf" id="4_dfjrj"]
+[ext_resource type="AudioStream" uid="uid://dk7jqiur72ph8" path="res://somGAMEOVER.mp3" id="4_v0jmy"]
+[ext_resource type="FontFile" uid="uid://dpbgb3lg16uw1" path="res://fonts/Silkscreen/Silkscreen-Bold.ttf" id="5_8o5cv"]
+[ext_resource type="AudioStream" uid="uid://olh8jvgx0jc8" path="res://somCERTO.mp3" id="5_qxpe7"]
+[ext_resource type="AudioStream" uid="uid://bm0kwlodxnr78" path="res://somERRADA.mp3" id="6_v0jmy"]
+[ext_resource type="AudioStream" uid="uid://57pdk3ev5kts" path="res://01. Space Jumper.mp3" id="11_5qepv"]
 
 [sub_resource type="Curve2D" id="Curve2D_cp6e5"]
 _data = {
@@ -71,6 +76,15 @@ unique_name_in_owner = true
 position = Vector2(-1447, -914)
 rotation = -0.0012853463
 
+[node name="SomFundo" type="AudioStreamPlayer2D" parent="Player" unique_id=690691226]
+stream = ExtResource("11_5qepv")
+volume_db = -13.97
+
+[node name="SomGameOver" type="AudioStreamPlayer2D" parent="Player" unique_id=1534435849]
+process_mode = 3
+stream = ExtResource("4_v0jmy")
+volume_db = 2.328
+
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=880031702]
 unique_name_in_owner = true
 visible = false
@@ -102,6 +116,16 @@ theme_override_font_sizes/font_size = 124
 text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ButtonRestart" type="Button" parent="GameOver" unique_id=203097685]
+process_mode = 3
+offset_left = 815.0
+offset_top = 648.0
+offset_right = 1067.0
+offset_bottom = 750.0
+theme_override_fonts/font = ExtResource("5_8o5cv")
+theme_override_font_sizes/font_size = 67
+text = "MENU"
 
 [node name="ChestTouched" type="CanvasLayer" parent="." unique_id=88419565]
 unique_name_in_owner = true
@@ -202,6 +226,14 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
+
+[node name="AudioCorreta" type="AudioStreamPlayer2D" parent="ChestTouched/Control" unique_id=1710696908]
+stream = ExtResource("5_qxpe7")
+volume_db = 24.0
+
+[node name="AudioErrada" type="AudioStreamPlayer2D" parent="ChestTouched/Control" unique_id=1213464874]
+stream = ExtResource("6_v0jmy")
+volume_db = 24.0
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1747972779]
 
@@ -417,4 +449,5 @@ position = Vector2(1388, -2045)
 [connection signal="timeout" from="ChestTimer" to="." method="_on_chest_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="pressed" from="GameOver/ButtonRestart" to="." method="_on_button_restart_pressed"]
 [connection signal="chest_touched" from="Chest" to="." method="_on_chest_chest_touched"]

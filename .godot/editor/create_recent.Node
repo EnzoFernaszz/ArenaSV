@@ -1,6 +1,9 @@
+AudioStreamPlayer2D
+Button
+AudioStreamPlayer
+Node
 TextureRect
 Label
-Button
 ColorRect
 CollisionShape2D
 StaticBody2D
@@ -9,6 +12,3 @@ Timer
 Control
 Sprite2D
 VBoxContainer
-CanvasLayer
-ProgressBar
-HBoxContainer

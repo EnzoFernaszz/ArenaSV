@@ -1,9 +1,3 @@
-res://Scenes/survivors_game.tscn
 res://Scenes/game.gd
-res://Scenes/TilteScreen.tscn
-res://Scenes/tilte_screen.gd
-res://Scenes/tutorial_screen.tscn
-res://Scenes/mob_fast.tscn
-res://Scenes/mob_fast.gd
-res://Scenes/mob_tank.gd
-res://Scenes/tutorial_screen.gd
+res://Scenes/survivors_game.tscn
+res://smoke_explosion/smoke_explosion.tscn

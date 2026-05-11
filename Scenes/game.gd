@@ -4,9 +4,6 @@ var score = 0
 var active_chest = null
 const MAX_CHESTS = 1
 
-# 1. ADICIONE OS LIMITES AQUI NO TOPO
-# Lembre-se de ir no Inspetor (após salvar) e mudar esses valores 
-# para as coordenadas exatas das suas paredes!
 @export var limite_esquerdo: float = -2250.0
 @export var limite_direito: float = 2250.0
 @export var limite_cima: float = -2250.0
@@ -15,6 +12,10 @@ const MAX_CHESTS = 1
 const MOB = preload("res://Scenes/mob.tscn")
 const MOB_FAST = preload("res://Scenes/mob_fast.tscn")
 const MOB_TANK = preload("res://Scenes/mob_tank.tscn")
+
+func _ready():
+	GerenciadorAudio.parar_musica_historia()
+	$Player/SomFundo.play()
 
 func _process(_delta):
 	%ScoreLabel.text = "SCORE: " + str(score)
@@ -38,7 +39,6 @@ func spawn_mob():
 	else:
 		new_mob = MOB.instantiate()
 	
-	# 2. APLIQUE O CLAMP NA POSIÇÃO DO MOB
 	var pos = %PathFollow2D.global_position
 	pos.x = clamp(pos.x, limite_esquerdo, limite_direito)
 	pos.y = clamp(pos.y, limite_cima, limite_baixo)
@@ -54,7 +54,7 @@ func spawn_chest():
 	var chest = chest_scene.instantiate()
 	%PathFollow2D.progress_ratio = randf()
 	
-	# 3. APLIQUE O CLAMP NA POSIÇÃO DO BAÚ TAMBÉM
+	
 	var pos = %PathFollow2D.global_position
 	pos.x = clamp(pos.x, limite_esquerdo, limite_direito)
 	pos.y = clamp(pos.y, limite_cima, limite_baixo)
@@ -71,9 +71,15 @@ func _on_timer_timeout():
 	spawn_mob()
 
 func _on_player_health_depleted():
+	$Player/SomGameOver.play()
 	%GameOver.show()
 	get_tree().paused = true
 
 func _on_chest_chest_touched(chest) -> void:
 	active_chest = chest
 	%ChestTouched.get_node("Control").show_screen(chest)
+
+
+func _on_button_restart_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/TilteScreen.tscn")
