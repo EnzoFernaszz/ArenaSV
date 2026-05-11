@@ -1,13 +1,13 @@
+Label
+PanelContainer
 Button
 AudioStreamPlayer2D
 AudioStreamPlayer
 Node
 TextureRect
-Label
 ColorRect
 CollisionShape2D
 StaticBody2D
-PanelContainer
 Timer
 Control
 Sprite2D
