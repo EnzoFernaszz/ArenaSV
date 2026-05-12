@@ -10,3 +10,4 @@ res://Scenes/gun.tscn
 res://Scenes/TilteScreen.tscn
 res://score_manager.gd
 res://Scenes/tutorial_screen.tscn
+res://Scenes/control.gd

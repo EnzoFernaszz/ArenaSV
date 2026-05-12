@@ -35,8 +35,26 @@ bg_color = Color(0.06666667, 0.06666667, 0.06666667, 1)
 border_color = Color(0.2, 0.2, 0.2, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ye702"]
-bg_color = Color(0.06666667, 0.06666667, 0.06666667, 1)
-border_color = Color(0.2901961, 0.61960787, 1, 1)
+bg_color = Color(0.11764706, 0.16470589, 0.22745098, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkncy"]
+bg_color = Color(0.14509805, 0.21960784, 0.29411766, 1)
+
+[sub_resource type="Gradient" id="Gradient_4cvxr"]
+colors = PackedColorArray(0, 0.7294118, 1, 1, 0.09411765, 0.8980392, 0.5254902, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jiupt"]
+gradient = SubResource("Gradient_4cvxr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q0okt"]
+texture = SubResource("GradientTexture1D_jiupt")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqro5"]
+bg_color = Color(0.41960785, 0.54901963, 0.65882355, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfjrj"]
 content_margin_left = 16.0
@@ -80,7 +98,7 @@ offset_bottom = 2493.0
 color = Color(0.36908567, 0.24053279, 0.29786974, 1)
 
 [node name="ChestTimer" type="Timer" parent="." unique_id=1743800169]
-wait_time = 15.0
+wait_time = 5.0
 autostart = true
 
 [node name="Timer" type="Timer" parent="." unique_id=173639759]
@@ -239,12 +257,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -734.5
-offset_top = -183.0
-offset_right = 734.5
-offset_bottom = 183.0
+offset_left = -395.0
+offset_top = -297.0
+offset_right = 395.0
+offset_bottom = 297.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 
 [node name="TitleLabel" type="Label" parent="ChestTouched/Control/VBoxContainer" unique_id=1217521120]
 texture_filter = 1
@@ -303,7 +322,11 @@ theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_5yf52")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_g6j6v")
 
 [node name="PanelContainer" type="PanelContainer" parent="ChestTouched/Control/VBoxContainer" unique_id=783514294]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(350, 150)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_ye702")
 
 [node name="QuestionArea" type="VBoxContainer" parent="ChestTouched/Control/VBoxContainer/PanelContainer" unique_id=630085077]
@@ -313,6 +336,7 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 15
 
 [node name="SequenceLabel" type="Label" parent="ChestTouched/Control/VBoxContainer/PanelContainer/QuestionArea" unique_id=1131666868]
 unique_name_in_owner = true
@@ -324,11 +348,12 @@ theme_override_fonts/font = ExtResource("4_dfjrj")
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_mkncy")
+theme_override_styles/fill = SubResource("StyleBoxTexture_q0okt")
 
 [node name="HBoxContainer (answers)" type="HBoxContainer" parent="ChestTouched/Control/VBoxContainer/PanelContainer/QuestionArea" unique_id=498580276]
 texture_filter = 1
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Answer0" type="Button" parent="ChestTouched/Control/VBoxContainer/PanelContainer/QuestionArea/HBoxContainer (answers)" unique_id=816673070]
@@ -336,18 +361,30 @@ unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_dfjrj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqro5")
 
 [node name="Answer1" type="Button" parent="ChestTouched/Control/VBoxContainer/PanelContainer/QuestionArea/HBoxContainer (answers)" unique_id=506553295]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_dfjrj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqro5")
 
 [node name="Answer2" type="Button" parent="ChestTouched/Control/VBoxContainer/PanelContainer/QuestionArea/HBoxContainer (answers)" unique_id=1016770168]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_dfjrj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqro5")
 
 [node name="AudioCorreta" type="AudioStreamPlayer" parent="ChestTouched/Control" unique_id=351488422]
 stream = ExtResource("5_qxpe7")

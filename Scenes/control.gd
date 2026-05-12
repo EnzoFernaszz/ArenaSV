@@ -55,6 +55,7 @@ func show_screen(chest = null):
 	visible = true
 	get_tree().paused = true
 	question_area.visible = false
+	%PanelContainer.hide()
 	
 	card0.disabled = false
 	card1.disabled = false
@@ -91,10 +92,14 @@ func show_screen(chest = null):
 func _on_card_pressed(card):
 	selected_upgrade = card.get_meta("upgrade")
 	question_area.visible = true
+	%PanelContainer.show()
 	
 	card0.disabled = true
 	card1.disabled = true
 	card2.disabled = true
+	card0.hide()
+	card1.hide()
+	card2.hide()
 	
 	_load_question()
 
@@ -127,6 +132,9 @@ func _on_answer_pressed(button):
 	else:
 		$AudioErrada.play()
 		_spawn_punishment()
+	card0.show()
+	card1.show()
+	card2.show()
 	_close()
 
 func _on_timeout():
