@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://uxcypkm13v7s" path="res://Scenes/tilte_screen.gd" id="1_i485x"]
 [ext_resource type="Texture2D" uid="uid://bu4jhtx4uquo7" path="res://icon.png" id="1_l70do"]
 [ext_resource type="Texture2D" uid="uid://caqfk2xng5v5u" path="res://trees/pine_tree.png" id="2_kt7mc"]
-[ext_resource type="FontFile" uid="uid://davvooq4yfjuq" path="res://fonts/Russo_One/RussoOne-Regular.ttf" id="2_xybtn"]
+[ext_resource type="FontFile" uid="uid://cdpn8ptqtky6q" path="res://fonts/Russo_One/RussoOne-Regular.ttf" id="2_xybtn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4f0x"]
 content_margin_left = 16.0
@@ -110,29 +110,6 @@ text = "TUTORIAL"
 horizontal_alignment = 1
 
 [node name="TutorialButton" type="Button" parent="VBoxContainer/PanelContainer2/ScoreLabel" unique_id=510685597]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_x2dwa")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_raplo")
-
-[node name="PanelContainer4" type="PanelContainer" parent="VBoxContainer" unique_id=594980847]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_b4f0x")
-
-[node name="ScoreLabel" type="Label" parent="VBoxContainer/PanelContainer4" unique_id=258371674]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_xybtn")
-theme_override_font_sizes/font_size = 50
-text = "RANKING"
-horizontal_alignment = 1
-
-[node name="TutorialButton" type="Button" parent="VBoxContainer/PanelContainer4/ScoreLabel" unique_id=1300363251]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
