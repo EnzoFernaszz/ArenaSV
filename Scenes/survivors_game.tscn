@@ -105,15 +105,53 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -358.0
+offset_left = -373.0
 offset_top = -107.0
-offset_right = 358.0
+offset_right = 373.0
 offset_bottom = 107.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_dfjrj")
 theme_override_font_sizes/font_size = 124
 text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreAtual" type="Label" parent="GameOver/ColorRect" unique_id=1826123002]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -373.0
+offset_top = -460.0
+offset_right = 373.0
+offset_bottom = -246.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_dfjrj")
+theme_override_font_sizes/font_size = 124
+text = "score: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MelhorScore" type="Label" parent="GameOver/ColorRect" unique_id=293984227]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -373.0
+offset_top = -292.0
+offset_right = 373.0
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_dfjrj")
+theme_override_font_sizes/font_size = 124
+text = "melhor score: "
 horizontal_alignment = 1
 vertical_alignment = 1
 

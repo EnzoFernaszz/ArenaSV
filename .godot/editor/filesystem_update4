@@ -1,8 +1,3 @@
-res://Scenes/story_screen.tscn
-res://Scenes/third_drawn.tscn
-res://Scenes/second_drawn.tscn
-res://Scenes/story_screen.gd
-res://Scenes/second_drawn.gd
-res://Scenes/third_drawn.gd
 res://Scenes/survivors_game.tscn
+res://score_manager.gd
 res://Scenes/game.gd
