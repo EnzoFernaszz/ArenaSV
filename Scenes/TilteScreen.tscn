@@ -119,6 +119,29 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_x2dwa")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_raplo")
 
+[node name="PanelContainer4" type="PanelContainer" parent="VBoxContainer" unique_id=594980847]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b4f0x")
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer/PanelContainer4" unique_id=258371674]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_xybtn")
+theme_override_font_sizes/font_size = 50
+text = "RANKING"
+horizontal_alignment = 1
+
+[node name="TutorialButton" type="Button" parent="VBoxContainer/PanelContainer4/ScoreLabel" unique_id=1300363251]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x2dwa")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_raplo")
+
 [node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer" unique_id=1475717356]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b4f0x")

@@ -1,10 +1,11 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778547347
+::res://::1778600319
 01. Space Jumper.mp3::AudioStreamMP3::2172642078243117184::1778459221::1778459294::1::::<><><>0<>0<>29a3e5f24189c5015af4e9f190aa819d<>res://.godot/imported/01. Space Jumper.mp3-e1d4fdb9e7b92cd6647de355aabea441.mp3str::
 credits.tscn::PackedScene::4548802949758218981::1778278469::0::1::::<><><>0<>0<><>::uid://caqfk2xng5v5u::::res://trees/pine_tree.png
 default_bus_layout.tres::AudioBusLayout::6564268947468103023::1771685366::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1778464493::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D::3850624499632875500::1771685366::1777402237::1::::<><><>0<>0<>08328dee63a8ba762d4beb129ea8dc66<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
+score_manager.gd::GDScript::1686007323170937174::1778551195::0::1::::<>Node<><>0<>0<><>::
 somCERTO.mp3::AudioStreamMP3::1005836421830723137::1778459221::1778459294::1::::<><><>0<>0<>fbb0b372ed822ba6c5e4d9f3b562125b<>res://.godot/imported/somCERTO.mp3-925ce9187322ff918604c6532c2716fe.mp3str::
 somERRADA.mp3::AudioStreamMP3::3280943308146243549::1778459221::1778459294::1::::<><><>0<>0<>36850487476c86a486562ddced1b4c21<>res://.godot/imported/somERRADA.mp3-567401652c7afad532b5b6922a74a64c.mp3str::
 somGAMEOVER.mp3::AudioStreamMP3::7927786053126049603::1778459221::1778459294::1::::<><><>0<>0<>fe7b23b2e71a179bcb8acc35746ffdae<>res://.godot/imported/somGAMEOVER.mp3-c54e9a81ff1977eef8b15446f083e9e1.mp3str::
@@ -56,13 +57,13 @@ impact.tscn::PackedScene::706737085132625066::1771685366::0::1::::<><><>0<>0<><>
 muzzle_flash.gd::GDScript::4479662457787026327::1771685366::0::1::::<>Node2D<><>0<>0<><>::
 muzzle_flash.png::CompressedTexture2D::3592944556550980239::1771685366::1777402237::1::::<><><>0<>0<>d995f352a7d07e7705e830566b0eb185<>res://.godot/imported/muzzle_flash.png-752b19c1a1a60c24eac6f205d487f2ea.ctex::
 muzzle_flash.tscn::PackedScene::392939055719894999::1771685366::0::1::::<><><>0<>0<><>::uid://b428neo6pc13x::::res://pistol/muzzle_flash/muzzle_flash.gd<>uid://brgpjilf7s2ul::::res://pistol/muzzle_flash/muzzle_flash.png
-::res://Scenes/::1778547251
+::res://Scenes/::1778552377
 bullet_2d.gd::GDScript::5756550784046680375::1778352924::0::1::::<>Area2D<><>0<>0<><>::
 bullet_2d.tscn::PackedScene::3645470024051463521::1777653775::0::1::::<><><>0<>0<><>::uid://coarsyh1eafkp::::res://Scenes/bullet_2d.gd<>uid://dftkbqwsfd68r::::res://pistol/projectile.png
 chest.gd::GDScript::6841555410369029663::1778337190::0::1::::<>Area2D<><>0<>0<><>::
 chest.tscn::PackedScene::8369574065088558121::1777414258::0::1::::<><><>0<>0<><>::uid://c4qdohi3u4qyh::::res://Scenes/chest.gd<>uid://e4q8me6nhunp::::res://Sprites/ChestPod/pod_closed.png
 control.gd::GDScript::5750558610904627458::1778464007::0::1::::<>Control<><>0<>0<><>::
-game.gd::GDScript::8436459038756774411::1778547251::0::1::::<>Node2D<><>0<>0<><>::
+game.gd::GDScript::8436459038756774411::1778552298::0::1::::<>Node2D<><>0<>0<><>::
 gerenciador_audio.gd::GDScript::3909217001716038280::1778459221::0::1::::<>Node<><>0<>0<><>::
 gerenciador_audio.tscn::PackedScene::3758735067457286983::1778459221::0::1::::<><><>0<>0<><>::uid://q4hngc8oujle::::res://somLORE.mp3<>uid://bvxwh6g5ufqmi::::res://Scenes/gerenciador_audio.gd
 gun.gd::GDScript::2880344380722337264::1778464357::0::1::::<>Area2D<><>0<>0<><>::
@@ -79,7 +80,7 @@ second_drawn.gd::GDScript::1442971990310003300::1778547251::0::1::::<>Control<><
 second_drawn.tscn::PackedScene::7048554230002854422::1778547251::0::1::::<><><>0<>0<><>::uid://buqreaxxbc5b3::::res://Sprites/Arts/SecondStartScreen.png<>uid://us8sj1bde1lw::::res://Scenes/second_drawn.gd<>uid://davvooq4yfjuq::::res://fonts/Russo_One/RussoOne-Regular.ttf
 story_screen.gd::GDScript::7573451034781973070::1778547251::0::1::::<>Control<><>0<>0<><>::
 story_screen.tscn::PackedScene::6037315769063542307::1778547251::0::1::::<><><>0<>0<><>::uid://dj2c2cecm3iak::::res://Sprites/Arts/MainScreenArt.png<>uid://df5vvqwaip6ry::::res://Scenes/story_screen.gd<>uid://davvooq4yfjuq::::res://fonts/Russo_One/RussoOne-Regular.ttf
-survivors_game.tscn::PackedScene::8591458836669554224::1778547251::0::1::::<><><>0<>0<><>::uid://dsgxioo8wstff::::res://Scenes/game.gd<>uid://dsw8raqgacxsc::::res://Scenes/player.tscn<>uid://c2qg1nuvfnd4q::::res://trees/pine_tree.tscn<>uid://cn6u4ilrnd7yk::::res://Scenes/control.gd<>uid://drijwrk5p8qm0::::res://Scenes/chest.tscn<>uid://davvooq4yfjuq::::res://fonts/Russo_One/RussoOne-Regular.ttf<>uid://dk7jqiur72ph8::::res://somGAMEOVER.mp3<>uid://dpbgb3lg16uw1::::res://fonts/Silkscreen/Silkscreen-Bold.ttf<>uid://olh8jvgx0jc8::::res://somCERTO.mp3<>uid://bm0kwlodxnr78::::res://somERRADA.mp3<>uid://57pdk3ev5kts::::res://01. Space Jumper.mp3
+survivors_game.tscn::PackedScene::8591458836669554224::1778552377::0::1::::<><><>0<>0<><>::uid://dsgxioo8wstff::::res://Scenes/game.gd<>uid://dsw8raqgacxsc::::res://Scenes/player.tscn<>uid://c2qg1nuvfnd4q::::res://trees/pine_tree.tscn<>uid://cn6u4ilrnd7yk::::res://Scenes/control.gd<>uid://drijwrk5p8qm0::::res://Scenes/chest.tscn<>uid://davvooq4yfjuq::::res://fonts/Russo_One/RussoOne-Regular.ttf<>uid://dk7jqiur72ph8::::res://somGAMEOVER.mp3<>uid://dpbgb3lg16uw1::::res://fonts/Silkscreen/Silkscreen-Bold.ttf<>uid://olh8jvgx0jc8::::res://somCERTO.mp3<>uid://bm0kwlodxnr78::::res://somERRADA.mp3<>uid://57pdk3ev5kts::::res://01. Space Jumper.mp3
 third_drawn.gd::GDScript::1354955399713670217::1778547251::0::1::::<>Control<><>0<>0<><>::
 third_drawn.tscn::PackedScene::3878128271611546429::1778547251::0::1::::<><><>0<>0<><>::uid://tkl6gukvjmfx::::res://Scenes/third_drawn.gd<>uid://bcyv2qbb25gib::::res://Sprites/Arts/ThirdStartScreen.png<>uid://davvooq4yfjuq::::res://fonts/Russo_One/RussoOne-Regular.ttf
 TilteScreen.tscn::PackedScene::3182962359897276921::1778463755::0::1::::<><><>0<>0<><>::uid://uxcypkm13v7s::::res://Scenes/tilte_screen.gd<>uid://bu4jhtx4uquo7::::res://icon.png<>uid://caqfk2xng5v5u::::res://trees/pine_tree.png<>uid://davvooq4yfjuq::::res://fonts/Russo_One/RussoOne-Regular.ttf

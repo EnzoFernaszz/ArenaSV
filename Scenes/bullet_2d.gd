@@ -5,7 +5,7 @@ var piercing = false
 var damage_multiplier = 1.0
 
 func _physics_process(delta):
-	const SPEED = 1000
+	const SPEED = 1700
 	const RANGE = 1200
 	position += Vector2.RIGHT.rotated(rotation) * SPEED * delta
 	travelled_distance += SPEED * delta

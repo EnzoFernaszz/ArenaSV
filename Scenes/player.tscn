@@ -17,6 +17,7 @@ bg_color = Color(0.623529, 0.866667, 0.317647, 1)
 bg_color = Color(5.5167266e-06, 0.71591944, 0.88397527, 1)
 
 [node name="Player" type="CharacterBody2D" unique_id=1546396198 groups=["player"]]
+collision_layer = 9
 motion_mode = 1
 platform_floor_layers = 4294901760
 script = ExtResource("1_73bic")

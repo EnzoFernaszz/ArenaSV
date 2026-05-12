@@ -1,9 +1,9 @@
+Node
+PanelContainer
+AudioStreamPlayer
 Label
 Button
-PanelContainer
 AudioStreamPlayer2D
-AudioStreamPlayer
-Node
 TextureRect
 ColorRect
 CollisionShape2D

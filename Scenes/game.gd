@@ -74,6 +74,7 @@ func _on_player_health_depleted():
 	ScoreManager.add_score(score)
 	$Player/SomGameOver.play()
 	%GameOver.show()
+	$HUD.hide()
 	%GameOver/ColorRect.get_node("ScoreAtual").text = "Score: " + str(score)
 	var best = ScoreManager.high_scores[0] if ScoreManager.high_scores.size() > 0 else 0
 	%GameOver/ColorRect.get_node("MelhorScore").text = "Melhor: " + str(best)
@@ -92,8 +93,3 @@ func _on_button_main_menu_pressed() -> void:
 func _on_button_try_again_pressed() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
-
-
-func _input(event):
-	if event.is_action_pressed("pause"):
-		get_tree().paused = !get_tree().paused

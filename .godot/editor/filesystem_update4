@@ -1,3 +1,12 @@
 res://Scenes/survivors_game.tscn
-res://score_manager.gd
+res://Scenes/player.tscn
+res://Scenes/chest.tscn
+res://Scenes/chest.gd
+res://Scenes/bullet_2d.gd
+res://Scenes/gun.gd
 res://Scenes/game.gd
+res://Scenes/pause.gd
+res://Scenes/gun.tscn
+res://Scenes/TilteScreen.tscn
+res://score_manager.gd
+res://Scenes/tutorial_screen.tscn

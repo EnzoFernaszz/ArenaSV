@@ -4,19 +4,39 @@
 [ext_resource type="PackedScene" uid="uid://dsw8raqgacxsc" path="res://Scenes/player.tscn" id="2_a7q7f"]
 [ext_resource type="PackedScene" uid="uid://c2qg1nuvfnd4q" path="res://trees/pine_tree.tscn" id="3_6h7ij"]
 [ext_resource type="Script" uid="uid://cn6u4ilrnd7yk" path="res://Scenes/control.gd" id="3_eua6o"]
-[ext_resource type="PackedScene" uid="uid://drijwrk5p8qm0" path="res://Scenes/chest.tscn" id="3_fk7m3"]
 [ext_resource type="FontFile" uid="uid://davvooq4yfjuq" path="res://fonts/Russo_One/RussoOne-Regular.ttf" id="4_dfjrj"]
 [ext_resource type="AudioStream" uid="uid://dk7jqiur72ph8" path="res://somGAMEOVER.mp3" id="4_v0jmy"]
 [ext_resource type="FontFile" uid="uid://dpbgb3lg16uw1" path="res://fonts/Silkscreen/Silkscreen-Bold.ttf" id="5_8o5cv"]
 [ext_resource type="AudioStream" uid="uid://olh8jvgx0jc8" path="res://somCERTO.mp3" id="5_qxpe7"]
 [ext_resource type="AudioStream" uid="uid://bm0kwlodxnr78" path="res://somERRADA.mp3" id="6_v0jmy"]
 [ext_resource type="AudioStream" uid="uid://57pdk3ev5kts" path="res://01. Space Jumper.mp3" id="11_5qepv"]
+[ext_resource type="Script" uid="uid://cs1ryn852oiug" path="res://Scenes/pause.gd" id="11_5yf52"]
 
 [sub_resource type="Curve2D" id="Curve2D_cp6e5"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -1447, -914, 0, 0, 0, 0, 1665, -918, 0, 0, 0, 0, 1656, 920, 0, 0, 0, 0, -1456, 928, 0, 0, 0, 0, -1439, -893)
 }
 point_count = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8o5cv"]
+bg_color = Color(0.11764706, 0.16470589, 0.22745098, 1)
+border_color = Color(0.2901961, 0.61960787, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qepv"]
+bg_color = Color(0.16470589, 0.24705882, 0.37254903, 1)
+border_color = Color(0.49803922, 0.7647059, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yf52"]
+bg_color = Color(0.07450981, 0.1254902, 0.1882353, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6j6v"]
+bg_color = Color(0.06666667, 0.06666667, 0.06666667, 1)
+border_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ye702"]
+bg_color = Color(0.06666667, 0.06666667, 0.06666667, 1)
+border_color = Color(0.2901961, 0.61960787, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfjrj"]
 content_margin_left = 16.0
@@ -48,9 +68,11 @@ size = Vector2(500, 5000)
 
 [node name="Game" type="Node2D" unique_id=327747119]
 y_sort_enabled = true
+texture_filter = 1
 script = ExtResource("1_qclsr")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1887095217]
+texture_filter = 1
 offset_left = -2490.0
 offset_top = -2496.0
 offset_right = 2498.0
@@ -67,29 +89,32 @@ wait_time = 0.3
 autostart = true
 
 [node name="Player" parent="." unique_id=1174028023 instance=ExtResource("2_a7q7f")]
+texture_filter = 1
 
 [node name="Path2D" type="Path2D" parent="Player" unique_id=1949369106]
+texture_filter = 1
 curve = SubResource("Curve2D_cp6e5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=949713007]
 unique_name_in_owner = true
+texture_filter = 1
 position = Vector2(-1447, -914)
 rotation = -0.0012853463
 
-[node name="SomFundo" type="AudioStreamPlayer2D" parent="Player" unique_id=690691226]
+[node name="SomFundo" type="AudioStreamPlayer" parent="Player" unique_id=326525586]
 stream = ExtResource("11_5qepv")
-volume_db = -13.97
+volume_db = -10.0
 
-[node name="SomGameOver" type="AudioStreamPlayer2D" parent="Player" unique_id=1534435849]
+[node name="SomGameOver" type="AudioStreamPlayer" parent="Player" unique_id=1425324302]
 process_mode = 3
 stream = ExtResource("4_v0jmy")
-volume_db = 2.328
 
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=880031702]
 unique_name_in_owner = true
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="GameOver" unique_id=1711581986]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -99,6 +124,7 @@ color = Color(0, 0, 0, 0.439216)
 
 [node name="Label" type="Label" parent="GameOver/ColorRect" unique_id=970741770]
 unique_name_in_owner = true
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -118,6 +144,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScoreAtual" type="Label" parent="GameOver/ColorRect" unique_id=1826123002]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -137,6 +164,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MelhorScore" type="Label" parent="GameOver/ColorRect" unique_id=293984227]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -157,6 +185,7 @@ vertical_alignment = 1
 
 [node name="ButtonTryAgain" type="Button" parent="GameOver" unique_id=1916730494]
 process_mode = 3
+texture_filter = 1
 offset_left = 705.0
 offset_top = 648.0
 offset_right = 1215.0
@@ -167,6 +196,7 @@ text = "TRY AGAIN"
 
 [node name="ButtonMainMenu" type="Button" parent="GameOver" unique_id=968348588]
 process_mode = 3
+texture_filter = 1
 offset_left = 705.0
 offset_top = 793.0
 offset_right = 1215.0
@@ -182,6 +212,7 @@ layer = 10
 
 [node name="Control" type="Control" parent="ChestTouched" unique_id=1362487742]
 process_mode = 3
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -191,6 +222,7 @@ grow_vertical = 2
 script = ExtResource("3_eua6o")
 
 [node name="ColorRect" type="ColorRect" parent="ChestTouched/Control" unique_id=723179786]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -200,6 +232,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.76862746)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ChestTouched/Control" unique_id=1995565992]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -214,12 +247,23 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TitleLabel" type="Label" parent="ChestTouched/Control/VBoxContainer" unique_id=1217521120]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 24
-text = "POD Collected"
+theme_override_fonts/font = ExtResource("4_dfjrj")
+theme_override_font_sizes/font_size = 50
+text = "-UPGRADE-"
+
+[node name="Subtitle" type="Label" parent="ChestTouched/Control/VBoxContainer" unique_id=1946172999]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_dfjrj")
+theme_override_font_sizes/font_size = 20
+text = "Escolha um upgrade e responda uma questão para adquiri-lo"
 
 [node name="HBoxContainer (cards)" type="HBoxContainer" parent="ChestTouched/Control/VBoxContainer" unique_id=1706578002]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -227,65 +271,94 @@ theme_override_constants/separation = 20
 
 [node name="Card0" type="Button" parent="ChestTouched/Control/VBoxContainer/HBoxContainer (cards)" unique_id=1919586812]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 250)
+texture_filter = 1
+custom_minimum_size = Vector2(250, 300)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dfjrj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8o5cv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5qepv")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_5yf52")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_g6j6v")
 
 [node name="Card1" type="Button" parent="ChestTouched/Control/VBoxContainer/HBoxContainer (cards)" unique_id=872200152]
 unique_name_in_owner = true
+texture_filter = 1
 custom_minimum_size = Vector2(250, 200)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dfjrj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8o5cv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5qepv")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_5yf52")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_g6j6v")
 
 [node name="Card2" type="Button" parent="ChestTouched/Control/VBoxContainer/HBoxContainer (cards)" unique_id=1897268752]
 unique_name_in_owner = true
+texture_filter = 1
 custom_minimum_size = Vector2(250, 200)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dfjrj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8o5cv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5qepv")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_5yf52")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_g6j6v")
 
-[node name="QuestionArea" type="VBoxContainer" parent="ChestTouched/Control/VBoxContainer" unique_id=630085077]
+[node name="PanelContainer" type="PanelContainer" parent="ChestTouched/Control/VBoxContainer" unique_id=783514294]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ye702")
+
+[node name="QuestionArea" type="VBoxContainer" parent="ChestTouched/Control/VBoxContainer/PanelContainer" unique_id=630085077]
 unique_name_in_owner = true
 visible = false
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="SequenceLabel" type="Label" parent="ChestTouched/Control/VBoxContainer/QuestionArea" unique_id=1131666868]
+[node name="SequenceLabel" type="Label" parent="ChestTouched/Control/VBoxContainer/PanelContainer/QuestionArea" unique_id=1131666868]
 unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dfjrj")
+
+[node name="ProgressBar" type="ProgressBar" parent="ChestTouched/Control/VBoxContainer/PanelContainer/QuestionArea" unique_id=1703181350]
+unique_name_in_owner = true
+texture_filter = 1
 layout_mode = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="ChestTouched/Control/VBoxContainer/QuestionArea" unique_id=1703181350]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="HBoxContainer (answers)" type="HBoxContainer" parent="ChestTouched/Control/VBoxContainer/QuestionArea" unique_id=498580276]
+[node name="HBoxContainer (answers)" type="HBoxContainer" parent="ChestTouched/Control/VBoxContainer/PanelContainer/QuestionArea" unique_id=498580276]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Answer0" type="Button" parent="ChestTouched/Control/VBoxContainer/QuestionArea/HBoxContainer (answers)" unique_id=816673070]
+[node name="Answer0" type="Button" parent="ChestTouched/Control/VBoxContainer/PanelContainer/QuestionArea/HBoxContainer (answers)" unique_id=816673070]
 unique_name_in_owner = true
+texture_filter = 1
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 
-[node name="Answer1" type="Button" parent="ChestTouched/Control/VBoxContainer/QuestionArea/HBoxContainer (answers)" unique_id=506553295]
+[node name="Answer1" type="Button" parent="ChestTouched/Control/VBoxContainer/PanelContainer/QuestionArea/HBoxContainer (answers)" unique_id=506553295]
 unique_name_in_owner = true
+texture_filter = 1
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 
-[node name="Answer2" type="Button" parent="ChestTouched/Control/VBoxContainer/QuestionArea/HBoxContainer (answers)" unique_id=1016770168]
+[node name="Answer2" type="Button" parent="ChestTouched/Control/VBoxContainer/PanelContainer/QuestionArea/HBoxContainer (answers)" unique_id=1016770168]
 unique_name_in_owner = true
+texture_filter = 1
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 
-[node name="AudioCorreta" type="AudioStreamPlayer2D" parent="ChestTouched/Control" unique_id=1710696908]
+[node name="AudioCorreta" type="AudioStreamPlayer" parent="ChestTouched/Control" unique_id=351488422]
 stream = ExtResource("5_qxpe7")
-volume_db = 24.0
 
-[node name="AudioErrada" type="AudioStreamPlayer2D" parent="ChestTouched/Control" unique_id=1213464874]
+[node name="AudioErrada" type="AudioStreamPlayer" parent="ChestTouched/Control" unique_id=1728912505]
 stream = ExtResource("6_v0jmy")
-volume_db = 24.0
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1747972779]
 
 [node name="PanelContainer" type="PanelContainer" parent="HUD" unique_id=1145084779]
+texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -297,6 +370,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_dfjrj")
 
 [node name="ScoreLabel" type="Label" parent="HUD/PanelContainer" unique_id=2066714807]
 unique_name_in_owner = true
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -309,6 +383,7 @@ layer = -32
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=980385255]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -318,157 +393,204 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.16470589, 0.16470589, 0.22745098, 1)
 
-[node name="Chest" parent="." unique_id=821155243 instance=ExtResource("3_fk7m3")]
-position = Vector2(535, 433)
-
 [node name="PineTree" parent="." unique_id=1536469701 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(66, 591)
 
 [node name="PineTree2" parent="." unique_id=896816878 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(155, 643)
 
 [node name="PineTree3" parent="." unique_id=466383871 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-9.99997, 687)
 
 [node name="PineTree4" parent="." unique_id=50880364 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(682, 254)
 
 [node name="PineTree5" parent="." unique_id=1152293371 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(829, 384)
 
 [node name="PineTree11" parent="." unique_id=1342470195 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(781, -296)
 
 [node name="PineTree6" parent="." unique_id=658083171 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-677, 313)
 
 [node name="PineTree7" parent="." unique_id=767266513 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-788, 370)
 
 [node name="PineTree8" parent="." unique_id=1473712656 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-829, 229)
 
 [node name="PineTree9" parent="." unique_id=2039282013 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-346, -355)
 
 [node name="PineTree10" parent="." unique_id=1043826134 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-573, -231)
 
 [node name="PineTree12" parent="." unique_id=195003767 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(1418, 864)
 
 [node name="PineTree14" parent="." unique_id=1780763820 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-2237, -1565)
 
 [node name="PineTree17" parent="." unique_id=496583177 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-1483, -1628)
 
 [node name="PineTree19" parent="." unique_id=1234452270 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-914, -1062)
 
 [node name="PineTree20" parent="." unique_id=1509125374 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(1509, 808)
 
 [node name="PineTree22" parent="." unique_id=768926148 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-1076, -464)
 
 [node name="PineTree24" parent="." unique_id=1466677659 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-1065, 752)
 
 [node name="PineTree25" parent="." unique_id=1056294067 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(1620, -238)
 
 [node name="PineTree26" parent="." unique_id=1713310434 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(2100, 159)
 
 [node name="PineTree27" parent="." unique_id=2510791 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(1559, -788)
 
 [node name="PineTree28" parent="." unique_id=1490983645 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(53, -983)
 
 [node name="PineTree29" parent="." unique_id=743923524 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(842, -844)
 
 [node name="PineTree30" parent="." unique_id=167275566 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(731, -777)
 
 [node name="PineTree31" parent="." unique_id=1147358421 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-573, -1370)
 
 [node name="PineTree32" parent="." unique_id=464930526 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-1602, -1604)
 
 [node name="PineTree33" parent="." unique_id=115163852 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-2066, -2118)
 
 [node name="PineTree34" parent="." unique_id=1626141612 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-1642, -1490)
 
 [node name="PineTree36" parent="." unique_id=1363762711 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-2219, -602)
 
 [node name="PineTree37" parent="." unique_id=1711011544 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-1994, 137)
 
 [node name="PineTree38" parent="." unique_id=1089604910 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(2261, -1110)
 
 [node name="PineTree40" parent="." unique_id=330963760 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(1054, -1576)
 
 [node name="PineTree41" parent="." unique_id=534930059 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(482, 2315)
 
 [node name="PineTree42" parent="." unique_id=1243262392 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-169, 1851)
 
 [node name="PineTree43" parent="." unique_id=1729600221 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-275, 1924)
 
 [node name="PineTree44" parent="." unique_id=471577833 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-813, 2339)
 
 [node name="PineTree46" parent="." unique_id=725196397 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-2066, 2274)
 
 [node name="PineTree48" parent="." unique_id=254676450 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-1488, 1582)
 
 [node name="PineTree49" parent="." unique_id=1009617623 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-1578, 1517)
 
 [node name="PineTree50" parent="." unique_id=226584650 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-2392, 1664)
 
 [node name="PineTree51" parent="." unique_id=2106307205 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(1670, 2046)
 
 [node name="PineTree52" parent="." unique_id=1983383285 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(2338, 2307)
 
 [node name="PineTree53" parent="." unique_id=1025506811 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(1686, 1354)
 
 [node name="PineTree55" parent="." unique_id=266091987 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(327, 1322)
 
 [node name="PineTree56" parent="." unique_id=14105218 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(2250, -2228)
 
 [node name="PineTree57" parent="." unique_id=316744475 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(679, -2228)
 
 [node name="PineTree58" parent="." unique_id=869204658 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-328, -2076)
 
 [node name="PineTree59" parent="." unique_id=1293423415 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-1238, -2228)
 
 [node name="PineTree60" parent="." unique_id=579446727 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(-1349, -2315)
 
 [node name="LimitesMapa" type="StaticBody2D" parent="." unique_id=1556514787]
+texture_filter = 1
 
 [node name="Cima" type="CollisionShape2D" parent="LimitesMapa" unique_id=1368999708]
 position = Vector2(-4, -2750)
@@ -487,17 +609,22 @@ position = Vector2(2750, 0)
 shape = SubResource("RectangleShape2D_v0jmy")
 
 [node name="PineTree61" parent="." unique_id=256887186 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(2301, 833)
 
 [node name="PineTree62" parent="." unique_id=991253412 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(928, -1599)
 
 [node name="PineTree63" parent="." unique_id=474645656 instance=ExtResource("3_6h7ij")]
+texture_filter = 1
 position = Vector2(1388, -2045)
+
+[node name="Pause" type="Node" parent="." unique_id=485165649]
+script = ExtResource("11_5yf52")
 
 [connection signal="timeout" from="ChestTimer" to="." method="_on_chest_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="pressed" from="GameOver/ButtonTryAgain" to="." method="_on_button_try_again_pressed"]
 [connection signal="pressed" from="GameOver/ButtonMainMenu" to="." method="_on_button_main_menu_pressed"]
-[connection signal="chest_touched" from="Chest" to="." method="_on_chest_chest_touched"]
