@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://bm0kwlodxnr78" path="res://somERRADA.mp3" id="6_v0jmy"]
 [ext_resource type="AudioStream" uid="uid://57pdk3ev5kts" path="res://01. Space Jumper.mp3" id="11_5qepv"]
 [ext_resource type="Script" uid="uid://cs1ryn852oiug" path="res://Scenes/pause.gd" id="11_5yf52"]
+[ext_resource type="Script" uid="uid://bj42wb4w826xm" path="res://Scenes/controlPause.gd" id="12_5yf52"]
 
 [sub_resource type="Curve2D" id="Curve2D_cp6e5"]
 _data = {
@@ -657,11 +658,71 @@ position = Vector2(928, -1599)
 texture_filter = 1
 position = Vector2(1388, -2045)
 
-[node name="Pause" type="Node" parent="." unique_id=485165649]
+[node name="Pause" type="Node" parent="." unique_id=485165649 node_paths=PackedStringArray("pause_menu")]
 script = ExtResource("11_5yf52")
+pause_menu = NodePath("../CanvasLayer2/Control")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1853737380]
+
+[node name="Control" type="Control" parent="CanvasLayer2" unique_id=1061435892]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_5yf52")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/Control" unique_id=11499653]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1084.0
+color = Color(0, 0, 0, 0.4392157)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/Control" unique_id=871313069]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.5
+offset_top = -240.0
+offset_right = 271.5
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer2/Control/VBoxContainer" unique_id=1758570250]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_dfjrj")
+theme_override_font_sizes/font_size = 124
+text = "Pausado"
+horizontal_alignment = 1
+
+[node name="ButtonTryAgain" type="Button" parent="CanvasLayer2/Control/VBoxContainer" unique_id=1174293990]
+process_mode = 3
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_8o5cv")
+theme_override_font_sizes/font_size = 67
+text = "TRY AGAIN"
+
+[node name="ButtonMainMenu" type="Button" parent="CanvasLayer2/Control/VBoxContainer" unique_id=1266883610]
+process_mode = 3
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_8o5cv")
+theme_override_font_sizes/font_size = 67
+text = "MAIN MENU"
 
 [connection signal="timeout" from="ChestTimer" to="." method="_on_chest_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="pressed" from="GameOver/ButtonTryAgain" to="." method="_on_button_try_again_pressed"]
 [connection signal="pressed" from="GameOver/ButtonMainMenu" to="." method="_on_button_main_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Control/VBoxContainer/ButtonTryAgain" to="." method="_on_button_try_again_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Control/VBoxContainer/ButtonMainMenu" to="." method="_on_button_main_menu_pressed"]
