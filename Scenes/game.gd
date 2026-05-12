@@ -96,9 +96,4 @@ func _on_button_try_again_pressed() -> void:
 
 func _input(event):
 	if event.is_action_pressed("pause"):
-		if get_tree().paused:
-			get_tree().paused = false
-			%PauseMenu.visible = false
-		else:
-			get_tree().paused = true
-			%PauseMenu.visible = true
+		get_tree().paused = !get_tree().paused
